@@ -5,11 +5,11 @@ export default function Header() {
   return (
     <Container>
       <div className="quote-side">
-        <p>
+        <span>
           “The science of operations, as derived from mathematics more
           especially, is a science of itself, and has its own abstract truth and
           value.”
-        </p>
+        </span>
         <p>Ada Lovelace</p>
       </div>
       <div className="icon">
@@ -37,4 +37,24 @@ const Container = styled.div`
   width: auto;
   display: flex;
   justify-content: space-between;
+
+  .quote-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: #FFF;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 183.333%; 
+
+    p{
+      color: #FFF;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height:  183.333%;
+    }
+  }
 `;
