@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Header from "./components/Header";
 import { GlobalStyle } from "./styles/GlobalStyles";
 import ClockSpace from "./components/ClockSpace";
+import MoreLess from "./components/MoreLess";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <GlobalStyle />
         <Header />
         <ClockSpace />
+        <MoreLess />
       </Container>
     </>
   );
