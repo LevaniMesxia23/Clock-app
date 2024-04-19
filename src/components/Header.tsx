@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { useContext } from "react";
+import { ShowContext } from "../App";
 
 export default function Header() {
+
+  const {show} = useContext(ShowContext)
+  console.log(show)
   return (
     <Container>
       <div className="quote-side">
@@ -38,23 +43,23 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
-  .quote-side{
+  .quote-side {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    color: #FFF;
+    color: #fff;
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 183.333%; 
+    line-height: 183.333%;
 
-    p{
-      color: #FFF;
+    p {
+      color: #fff;
       font-size: 0.75rem;
       font-style: normal;
       font-weight: 700;
-      line-height:  183.333%;
+      line-height: 183.333%;
     }
   }
 `;

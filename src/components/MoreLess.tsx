@@ -1,9 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { useContext } from "react";
+import { ShowContext } from "../App";
+
+
 
 export default function MoreLess() {
+  const {show, setShow} = useContext(ShowContext)
+  console.log(show)
+  const handleClick = () => {
+  setShow(!show)
+  
+  };
   return (
-    <Container>
+    <Container onClick={handleClick}>
       <span>more</span>
       <div>
         <svg

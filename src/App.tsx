@@ -1,18 +1,27 @@
 import styled from "styled-components";
 import Header from "./components/Header";
-import { GlobalStyle } from "./styles/GlobalStyles";
 import ClockSpace from "./components/ClockSpace";
 import MoreLess from "./components/MoreLess";
+import { GlobalStyle } from "./styles/GlobalStyles";
+import MoreInformation from "./components/MoreInformation";
+import React, { createContext, useContext, useState } from 'react';
+
+export const ShowContext = createContext(null);
 
 function App() {
+  const [show, setShow] = useState(true);
+  const contextValue = { show, setShow }
   return (
     <>
-      <Container>
-        <GlobalStyle />
-        <Header />
-        <ClockSpace />
-        <MoreLess />
-      </Container>
+      <ShowContext.Provider value={contextValue}>
+        <Container>
+          <GlobalStyle />
+          {show === false ? null : <Header />}
+          <ClockSpace />
+          <MoreLess />
+          <MoreInformation />
+        </Container>
+      </ShowContext.Provider>
     </>
   );
 }
@@ -26,6 +35,9 @@ const Container = styled.div`
 
   background-image: url(../starter-code/assets/mobile/bg-image-nighttime.jpg);
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 `;
+
+
+
